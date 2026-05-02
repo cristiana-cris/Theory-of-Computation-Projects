@@ -1,0 +1,7 @@
+101 Not accepted 
+011 Accepted 
+11 Accepted 
+1111 Accepted 
+1010 Not accepted 
+1 Not accepted 
+

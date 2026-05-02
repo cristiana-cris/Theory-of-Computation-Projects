@@ -1,0 +1,46 @@
+//sections must be named: sigma, delta, states, final, start
+//the order in which they are specified doesn't matter
+
+
+//the following automata accepts only string where the number of 
+//a's is even or the number of b's divides by 3
+
+states{
+    start
+    q0
+    q1
+    q2
+    q3
+    q4
+}
+
+sigma{
+    a
+    b
+}
+
+start{
+    start
+}
+
+final{
+    q0
+    q2
+}
+
+delta{
+    start epsilon q0
+    start epsilon q2
+
+    q0 b q0
+    q0 a q1
+    q1 b q1
+    q1 a q0
+
+    q2 a q2
+    q2 b q3
+    q3 a q3
+    q3 b q4
+    q4 a q4
+    q4 b q2
+}

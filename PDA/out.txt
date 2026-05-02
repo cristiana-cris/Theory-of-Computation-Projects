@@ -1,0 +1,5 @@
+0011 Accepted 
+01 Accepted 
+1 Not Accepted 
+0001 Not Accepted 
+

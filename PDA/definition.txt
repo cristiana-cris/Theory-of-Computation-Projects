@@ -1,0 +1,48 @@
+//sections must be named: sigma, gamma, delta, states, final, start 
+//the order in which they are specified doesn't matter
+
+//DPDA that accepts only string with the format 0(n)1(n):
+//ex: 0011, 01...
+
+states{
+    start
+    garbage
+    q0
+    q1
+    q2
+}
+
+sigma{
+    1
+    0
+}
+
+gamma{
+    $
+    0
+}
+
+start{
+    start
+}
+
+
+final{
+    q2
+}
+
+delta{
+    start epsilon epsilon q0 $
+
+    q0 1 epsilon garbage epsilon
+    q0 0 epsilon q0 0
+    q0 1 0 q1 epsilon
+
+    q1 1 0 q1 epsilon
+    q1 0 epsilon garbage epsilon
+    q1 1 $ garbage epsilon
+    q1 epsilon $ q2 epsilon
+
+    garbage 1 epsilon garbage epsilon
+    garbage 0 epsilon garbage epsilon
+}

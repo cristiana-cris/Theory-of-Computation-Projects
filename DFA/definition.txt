@@ -1,0 +1,33 @@
+//sections must be named: sigma, delta, states, final, start
+//the order in which they are specified doesn't matter
+
+
+//the following automata accepts only multiple of 3's(in binary)
+
+states{
+    s0 //initial state
+    s1
+    s2
+}
+
+sigma{
+    1
+    0
+}
+
+start{
+    s0
+}
+
+final{
+    s0
+}
+
+delta{
+    s0 1 s1
+    s1 0 s2
+    s2 1 s2
+    s2 0 s1
+    s1 1 s0
+    s0 0 s0
+}

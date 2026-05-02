@@ -1,0 +1,6 @@
+aabbbb Accepted 
+bab Not Accepted 
+aaaaaa Accepted 
+babbaa Not Accepted 
+ababa Not Accepted 
+
