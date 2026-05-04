@@ -2,7 +2,7 @@ import sys
 import os
 # Adds the parent directory to the python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from parse import *
+import parse
 
 def dpdaGetContent(sections):  
     #parses sections and extracts information for a DPDA   
@@ -35,7 +35,7 @@ def dpdaGetContent(sections):
 
     dpda_content['sigma'].append('epsilon')
     dpda_content['gamma'].append('epsilon')
-    return dpda_content
+    return dpda_content    
 
 def transition(delta, key, stack):
     top=stack[-1] if stack else 'epsilon'
@@ -45,9 +45,9 @@ def transition(delta, key, stack):
         if top in delta[key]:
             next_state=delta[key][top][0]
             symbol_push=delta[key][top][1]
-            if symbol_push=='epsilon':
-                if stack: stack.pop()
-            else:
+            if top!='epsilon' and stack:
+                stack.pop()
+            if symbol_push!='epsilon':
                 stack.append(symbol_push)
             return (next_state, stack)
     return -1
@@ -74,7 +74,6 @@ def dpdaRules(sections, w, state, index, stack):
 
     key=(state, w[index])
     next=transition(delta, key, stack)
-
     if next==-1:
         return "No valid transitions for input"
     next_state, stack=next
@@ -83,7 +82,7 @@ def dpdaRules(sections, w, state, index, stack):
 
 
 def dpdaResults(sections):
-    dpda_content=dpdaGetContent(sections) 
+    dpda_content=parse.dpdaGetContent(sections) 
     #erorrs
     if dpda_content == -1:
         print("Sections are not defined correctly for DFA")
@@ -110,11 +109,12 @@ def start():
     print("Write path for the file with the definition: ")
     definition_file=input()
 
-    sections=getSections(definition_file)
+    sections=parse.getSections(definition_file)
     if sections == -1:
         print('Syntax error')
         return
     
     dpdaResults(sections)
-    
-start()
+
+if __name__=="__main__":
+    start()

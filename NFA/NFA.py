@@ -2,7 +2,7 @@ import sys
 import os
 # Adds the parent directory to the python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from parse import *
+import parse
 
 def nfaGetContent(sections):  
     #parses sections and extracts information for a NFA   
@@ -99,7 +99,7 @@ def start():
     print("Write path for the file with the definition: ")
     definition_file=input()
 
-    sections=getSections(definition_file)
+    sections=parse.getSections(definition_file)
     if sections == -1:
         print('Syntax error')
         return

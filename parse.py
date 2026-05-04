@@ -36,4 +36,3 @@ def getSections(definition_file):
                 content.append(line)
 
     return sections
-    

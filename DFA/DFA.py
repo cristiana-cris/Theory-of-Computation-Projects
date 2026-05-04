@@ -2,9 +2,9 @@ import sys
 import os
 # Adds the parent directory to the python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from parse import *
+import parse
 
-def dfaGetContent(sections):                       
+def dfaGetContent(sections):                      
     transition={}
     dfa_content={}
     section_names=['sigma', 'delta', 'states', 'final', 'start']
@@ -41,11 +41,12 @@ def dfaResults(sections):
         print("Sections are not defined correctly for DFA")
         return
     #defining files
-    print("Introdu numele fisierului cu input: ")
+    print("Write the path for input file: ")
     input_file=input()
-    print("Introdu numele fisierului pentru output: ")
+    print("Write the path for output file: ")
     output_file=input()
     output_file=open(output_file, 'w')
+
     
     #checking each string
     result=''
@@ -61,7 +62,7 @@ def start():
     print("Introdu calea catre fisierul cu definitia: ")
     definition_file=input()
 
-    sections=getSections(definition_file)
+    sections=parse.getSections(definition_file)
     if sections == -1:
         print('Syntax error')
         return

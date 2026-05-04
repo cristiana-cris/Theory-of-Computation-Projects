@@ -1,6 +1,6 @@
 section{
-content
-	content
+You can write content
+	with or without indentation
 }
 //comment
 
