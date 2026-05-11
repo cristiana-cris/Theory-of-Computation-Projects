@@ -1,0 +1,56 @@
+//sections must be named: sigma, gamma, gammaRules, delta, states, final, start 
+//first item added in gamma is the item that is necessary for a good ending
+//the order in which they are specified doesn't matter
+
+states{
+    start
+    finish
+    
+    entrance
+    lab
+    library
+    workshop
+    garden
+}
+
+sigma{
+    w //nord
+    a //west
+    s //sud
+    d //est
+    pick
+}
+
+gamma{
+    key
+    potion
+}
+
+gammaRules{
+    key->potion
+}
+
+start{
+    start
+}
+
+final{
+    finish
+}
+
+delta{
+	start s epsilon entrance epsilon
+	entrance w epsilon start epsilon
+	entrance s epsilon lab epsilon
+	lab w epsilon entrance epsilon
+	lab d epsilon workshop epsilon
+	workshop a epsilon lab epsilon
+	lab s epsilon library epsilon
+	library w epsilon lab epsilon
+	workshop d epsilon garden epsilon
+	garden a epsilon workshop epsilon
+	garden w epsilon finish epsilon
+	finish s epsilon garden epsilon
+	workshop pick key workshop potion
+	library pick epsilon library key
+}

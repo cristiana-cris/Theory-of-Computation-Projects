@@ -1,0 +1,56 @@
+//sections must be named: sigma, gamma, delta, states, final, start 
+//first item added in gamma is the item that is necessary for a good ending
+//the order in which they are specified doesn't matter
+
+states{
+    start
+    finish
+    
+    entrance
+    lab
+    library
+    workshop
+    closet
+}
+
+sigma{
+    w //nord
+    a //west
+    s //sud
+    d //est
+    pick
+}
+
+gamma{
+    //tells which Item is needed to access another Item
+    //needed item->item
+    flashlight
+}
+
+gammaRules{
+    
+}
+
+start{
+    start
+}
+
+final{
+    finish
+}
+
+delta{
+	start d epsilon entrance epsilon
+	entrance a epsilon start epsilon
+	entrance s epsilon library epsilon
+	library w epsilon entrance epsilon
+	library s epsilon lab epsilon
+	lab w epsilon library epsilon
+	lab s epsilon workshop epsilon
+	workshop w epsilon lab epsilon
+	lab a epsilon closet epsilon
+	closet d epsilon lab epsilon
+	workshop a epsilon finish epsilon
+	finish d epsilon workshop epsilon
+	lab pick epsilon lab flashlight
+}

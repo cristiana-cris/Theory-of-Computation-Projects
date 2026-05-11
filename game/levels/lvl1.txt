@@ -1,0 +1,48 @@
+//sections must be named: sigma, gamma, delta, states, final, start 
+//first item added in gamma is the item that is necessary for a good ending
+//the order in which they are specified doesn't matter
+
+states{
+    start
+    finish
+    
+    entrance
+    lounge
+    living room
+    garden
+}
+
+sigma{
+    w //nord
+    a //west
+    s //sud
+    d //est
+    pick
+}
+
+gamma{
+}
+
+gammaRules{
+}
+
+start{
+    start
+}
+
+final{
+    finish
+}
+
+delta{
+	start d epsilon entrance epsilon
+	entrance a epsilon start epsilon
+	entrance d epsilon living room epsilon
+	living room a epsilon entrance epsilon
+	entrance w epsilon lounge epsilon
+	lounge s epsilon entrance epsilon
+	entrance s epsilon garden epsilon
+	garden w epsilon entrance epsilon
+	living room w epsilon finish epsilon
+	finish s epsilon living room epsilon
+}

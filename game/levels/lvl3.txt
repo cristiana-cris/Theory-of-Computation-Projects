@@ -1,0 +1,56 @@
+//sections must be named: sigma, gamma, delta, states, final, start 
+//firat item added in gamma is the item that is necessary for a good ending
+//the order in which they are specified doesn't matter
+
+states{
+    start
+    finish
+    
+    entrance
+    lab
+    library
+    workshop
+    garden
+}
+
+sigma{
+    w //nord
+    a //west
+    s //sud
+    d //est
+    pick
+}
+
+gamma{
+    potion
+    key
+}
+
+gammaRules{
+    key->potion
+}
+
+start{
+    start
+}
+
+final{
+    finish
+}
+
+delta{
+	start w epsilon entrance epsilon
+	entrance s epsilon start epsilon
+	entrance d epsilon workshop epsilon
+	workshop a epsilon entrance epsilon
+	entrance w epsilon library epsilon
+	library s epsilon entrance epsilon
+	entrance a epsilon garden epsilon
+	garden d epsilon entrance epsilon
+	workshop s epsilon lab epsilon
+	lab w epsilon workshop epsilon
+	workshop d epsilon finish epsilon
+	finish a epsilon workshop epsilon
+	library pick epsilon library key
+	workshop pick key workshop potion
+}

@@ -78,7 +78,7 @@ def dpdaRules(sections, w, state, index, stack):
 
 
 def dpdaResults(sections):
-    dpda_content=dpdaGetContent(sections) 
+    dpda_content=parse.dpdaGetContent(sections) 
     #erorrs
     if not dpda_content:
         print("Sections are not defined correctly for DFA")

@@ -1,5 +1,7 @@
 import re;
 
+#repair syntax for {} on the same line
+
 def getSections(definition_file):
     sections={} 
     content=[] 
@@ -16,7 +18,7 @@ def getSections(definition_file):
                 continue
 
             #regex accepting only if section has a name
-            if re.search('[a-zA-Z]+\\{', line):
+            if re.search('[a-z]+\\{', line):
                 if in_section: 
                     return -1
                 in_section=1
