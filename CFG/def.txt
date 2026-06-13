@@ -1,0 +1,31 @@
+//all characters are lower case
+sigma{
+    dog
+    cat
+    eat
+    choose
+    ' '
+}
+
+
+//variables must be upper case
+variables{
+    S
+    V
+    P
+}
+
+start{
+    P
+}
+
+rules{
+    P->SV
+    P->SVS
+
+    S->'dog '
+    S->'cat '
+
+    V->'chase '
+    V->'eat '
+}
