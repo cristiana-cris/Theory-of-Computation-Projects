@@ -35,14 +35,14 @@ final{
 }
 
 delta{
-	start d epsilon entrance epsilon
-	entrance a epsilon start epsilon
-	entrance d epsilon living room epsilon
-	living room a epsilon entrance epsilon
-	entrance w epsilon lounge epsilon
-	lounge s epsilon entrance epsilon
-	entrance s epsilon garden epsilon
-	garden w epsilon entrance epsilon
-	living room w epsilon finish epsilon
-	finish s epsilon living room epsilon
+	start w epsilon entrance epsilon
+	entrance s epsilon start epsilon
+	entrance w epsilon living room epsilon
+	living room s epsilon entrance epsilon
+	living room w epsilon lounge epsilon
+	lounge s epsilon living room epsilon
+	living room d epsilon garden epsilon
+	garden a epsilon living room epsilon
+	living room a epsilon finish epsilon
+	finish d epsilon living room epsilon
 }

@@ -41,16 +41,16 @@ final{
 delta{
 	start w epsilon entrance epsilon
 	entrance s epsilon start epsilon
-	entrance d epsilon workshop epsilon
-	workshop a epsilon entrance epsilon
-	entrance w epsilon library epsilon
-	library s epsilon entrance epsilon
-	entrance a epsilon garden epsilon
-	garden d epsilon entrance epsilon
-	workshop s epsilon lab epsilon
-	lab w epsilon workshop epsilon
-	workshop d epsilon finish epsilon
-	finish a epsilon workshop epsilon
+	entrance a epsilon lab epsilon
+	lab d epsilon entrance epsilon
+	entrance d epsilon library epsilon
+	library a epsilon entrance epsilon
+	lab s epsilon garden epsilon
+	garden w epsilon lab epsilon
+	library d epsilon workshop epsilon
+	workshop a epsilon library epsilon
+	library w epsilon finish epsilon
+	finish s epsilon library epsilon
 	library pick epsilon library key
-	workshop pick key workshop potion
+	garden pick key garden potion
 }

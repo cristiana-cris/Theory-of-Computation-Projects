@@ -40,17 +40,17 @@ final{
 }
 
 delta{
-	start d epsilon entrance epsilon
-	entrance a epsilon start epsilon
-	entrance s epsilon library epsilon
-	library w epsilon entrance epsilon
-	library s epsilon lab epsilon
-	lab w epsilon library epsilon
-	lab s epsilon workshop epsilon
-	workshop w epsilon lab epsilon
-	lab a epsilon closet epsilon
-	closet d epsilon lab epsilon
-	workshop a epsilon finish epsilon
-	finish d epsilon workshop epsilon
-	lab pick epsilon lab flashlight
+	start w epsilon entrance epsilon
+	entrance s epsilon start epsilon
+	entrance a epsilon closet epsilon
+	closet d epsilon entrance epsilon
+	entrance d epsilon workshop epsilon
+	workshop a epsilon entrance epsilon
+	closet a epsilon library epsilon
+	library d epsilon closet epsilon
+	closet s epsilon lab epsilon
+	lab w epsilon closet epsilon
+	library a epsilon finish epsilon
+	finish d epsilon library epsilon
+	library pick epsilon library flashlight
 }
